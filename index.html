@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plagiarism Detection Using Semantic Similarity</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg,#43cea2, #185a9d, #6dd5ed);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .container {
+            width: 520px;
+            background: rgba(255,255,255,0.12);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.14);
+            backdrop-filter: blur(11px);
+            animation: fadeIn 0.9s;
+        }
+        @keyframes fadeIn {
+            from { opacity:0; transform:scale(0.95);}
+            to { opacity:1; transform:scale(1);}
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 22px;
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .info {
+            font-size: 15px;
+            margin-top: 8px;
+            margin-bottom: 18px;
+            color: #e0f7fa;
+            text-align: center;
+            font-weight: 500;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 6px;
+            margin-top: 8px;
+            font-size: 16px;
+        }
+        textarea {
+            width: 100%;
+            min-height: 90px;
+            max-height: 150px;
+            margin: 0;
+            padding: 13px;
+            border: none;
+            border-radius: 7px;
+            font-size: 15px;
+            resize: vertical;
+            background: rgba(255,255,255,0.22);
+            color: #17486d;
+            box-shadow: 0 2px 8px rgba(40,110,160,0.12);
+            font-family: inherit;
+            transition: background 0.25s;
+        }
+        textarea:focus {
+            outline: none;
+            background: rgba(255,255,255,0.33);
+        }
+        button {
+            width: 100%;
+            background: linear-gradient(90deg,#43cea2,#185a9d);
+            color: #fff;
+            border: none;
+            padding: 15px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 12px;
+            box-shadow: 0 2px 10px rgba(40,110,160,0.1);
+            transition: background 0.4s, transform 0.14s;
+        }
+        button:hover {
+            background: linear-gradient(90deg,#185a9d,#43cea2);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .extra-info {
+            font-size: 14px;
+            margin-top: 16px;
+            color: #fff;
+            text-align: center;
+            background: rgba(67,206,162,0.12);
+            padding: 6px 0;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>🚀 Plagiarism Detection</h2>
+    <p class="info">Instantly check for plagiarism using deep learning and semantic similarity!</p>
+    <form method="POST" action="/result">
+        <label>Enter Original Text:</label>
+        <textarea name="text1" placeholder="Paste original text here..." required></textarea>
+        <label>Enter Comparison Text:</label>
+        <textarea name="text2" placeholder="Paste suspected/plagiarized text here..." required></textarea>
+        <button type="submit">🔍 Analyze Similarity</button>
+    </form>
+    <div class="extra-info">
+        Uses both TF-IDF and BERT semantic matching for precise plagiarism checks.<br>
+        <span style="color:#38ef7d;">Your data is never stored.</span>
+    </div>
+</div>
+</body>
+</html>
